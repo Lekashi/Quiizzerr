@@ -5,7 +5,7 @@ This is a quizing website that takes in account time with a multiple choice quiz
 
 ### Technology used:
 1\. HTML  
-2\. CSS
+2\. CSS 
 3\. Javascript
 
 ## Links:
