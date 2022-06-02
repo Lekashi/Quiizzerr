@@ -1,5 +1,28 @@
 //questions div
 //list items of possible answers
+var questionList =[
+  {
+    q: "What does NaN stand for?",
+    pa1: "no and no",
+    pa2: "Not a Number",
+    pa3: "not a nose",
+    correct: "Not a Number"
+  },
+  {
+    q: "What does NaN stand for?",
+    pa1: "no and no",
+    pa2: "Not a Number",
+    pa3: "not a nose",
+    correct: "Not a Number"
+  },
+  {
+    q: "What does NaN stand for?",
+    pa1: "no and no",
+    pa2: "Not a Number",
+    pa3: "not a nose",
+    correct: "Not a Number"
+  }
+]
 //endgame div
 //timer
 
@@ -17,6 +40,7 @@ var feedback;
 
 
 // event listener for start button 
+document.getElementById("myBtn").addEventListener("click", displayDate);
 // reference for button
 // add event listener and function
 
