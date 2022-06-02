@@ -77,3 +77,20 @@
 //pull scores from local storage div with ol make references to those in ol
 //order high scores from highest to lowest
 // need buttons for html for go back and clear local storage
+function printQuestionAnswers() {
+    for (var i = 0; i < printQuestionAnswers.length; i++) {
+        var question = questionsAnswer.
+    }
+}
+
+var timerInterval = setInterval(function(){
+    timerCount --;
+    timerElement.innerHTML = timerCount;
+    if(timerCount === 0){
+      clearInterval(timerInterval);
+      loseGame();
+    }
+    if(isWin){
+      clearInterval(timerInterval);
+    };
+  },1000)
