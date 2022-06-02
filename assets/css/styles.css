@@ -1,0 +1,14 @@
+html {
+    background-color: #161e69;
+    color: burlywood;
+}
+
+h1 {
+    text-align: center;
+}
+
+.questionSec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
