@@ -7,13 +7,16 @@
 //gen variables
 //score
 //time
+var time;
 //timer
-//questions left (referencing indexes) var questionIndex = 0
+var timer;
+//questions left (referencing indexes)
+var questionIndex = 0;
 //feedback variable
+var feedback;
 
 
-
-// event listener for start button
+// event listener for start button 
 // reference for button
 // add event listener and function
 
@@ -79,7 +82,19 @@
 // need buttons for html for go back and clear local storage
 function printQuestionAnswers() {
     for (var i = 0; i < printQuestionAnswers.length; i++) {
-        var question = questionsAnswer.
+        var question = questionsAnswer[i].q
+        var questionEl =document.createElement("h2")
+        questionEl.setAttribute("class", "question")
+        questionEl.textContent = question;
+        questionAnswerContainer.appendChild(questionEl);
+
+        var pa1 = questionsAnswer[i].pa1
+        var pa2 = questionsAnswer[i].pa2
+        var pa3 = questionsAnswer[i].pa3
+
+        var pa1El = document.createElement("button")
+        pa1El.setAttribute("data-pa",pa1);
+
     }
 }
 
