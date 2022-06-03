@@ -1,11 +1,12 @@
 //questions div
 //list items of possible answers
-var questionList =[
+var questionsAnswer =[
   {
     q: "What does NaN stand for?",
     pa1: "no and no",
     pa2: "Not a Number",
     pa3: "not a nose",
+    pa4: "not my child",
     correct: "Not a Number"
   },
   {
@@ -13,6 +14,7 @@ var questionList =[
     pa1: "no and no",
     pa2: "Not a Number",
     pa3: "not a nose",
+    pa4: "not my child",
     correct: "Not a Number"
   },
   {
@@ -20,27 +22,30 @@ var questionList =[
     pa1: "no and no",
     pa2: "Not a Number",
     pa3: "not a nose",
+    pa4: "not my child",
     correct: "Not a Number"
   }
 ]
 //endgame div
 //timer
-
+var startButton = document.getElementById("startButton");
 
 //gen variables
 //score
-//time
-var time;
+//time 
+var timeEl = document.getElementById("Timer");
 //timer
-var timer;
+var timerCount = 30.000;
 //questions left (referencing indexes)
 var questionIndex = 0;
 //feedback variable
 var feedback;
+var loseGame = false;
+
 
 
 // event listener for start button 
-document.getElementById("myBtn").addEventListener("click", displayDate);
+  startButton.addEventListener("click", printQuestionAnswers);
 // reference for button
 // add event listener and function
 
@@ -105,6 +110,18 @@ document.getElementById("myBtn").addEventListener("click", displayDate);
 //order high scores from highest to lowest
 // need buttons for html for go back and clear local storage
 function printQuestionAnswers() {
+  console.log("printQuestionAnswers function has started")
+
+  
+  timerInterval = setInterval(function(){
+    timerCount --;
+    timeEl.textContent = timerCount + " Seconds Left";
+    // timerElement.innerHTML = timerCount;
+    if(timerCount === 0){
+    clearInterval(timerInterval);
+    loseGame();
+  }  },1000);
+
     for (var i = 0; i < printQuestionAnswers.length; i++) {
         var question = questionsAnswer[i].q
         var questionEl =document.createElement("h2")
@@ -115,21 +132,11 @@ function printQuestionAnswers() {
         var pa1 = questionsAnswer[i].pa1
         var pa2 = questionsAnswer[i].pa2
         var pa3 = questionsAnswer[i].pa3
-
+        
+        
         var pa1El = document.createElement("button")
         pa1El.setAttribute("data-pa",pa1);
-
+      }
     }
-}
-
-var timerInterval = setInterval(function(){
-    timerCount --;
-    timerElement.innerHTML = timerCount;
-    if(timerCount === 0){
-      clearInterval(timerInterval);
-      loseGame();
-    }
-    if(isWin){
-      clearInterval(timerInterval);
-    };
-  },1000)
+    
+    
