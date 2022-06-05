@@ -3,6 +3,13 @@ html {
     color: burlywood;
 }
 
+modal{
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 70%;
+}
+
 h1 {
     text-align: center;
 }
