@@ -11,7 +11,19 @@ modal{
 }
 
 h1 {
-    text-align: center;
+    background-color: dimgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 60px;
+    padding-top: 10px;
+    margin-right: 27%;
+    margin-left: 27%;
+    padding-bottom: 10px;
+    border-radius: 30px;
+    color: coral;
+    border: dotted 7px darkseagreen;
+    font-family: "Brush Script MT";
 }
 
 #startButton {

@@ -60,7 +60,7 @@ function checkAnswer(e) {
         clearInterval(checkAnswerInterval);
       }
     }, 1000);
-    
+
   } else {
     console.log("bad")
     timerCount -= 10;
@@ -74,7 +74,7 @@ function checkAnswer(e) {
     }, 1000);
   }
   currentQuestionIndex++;
-  
+
   if (currentQuestionIndex < questionAnswerContainer.length) {
     questionShow()
   } else {
@@ -84,36 +84,35 @@ function checkAnswer(e) {
 
 function WinGame() {
   // var numChars = prompt("How many character ")
-      var userInitials = prompt("Want to save your highscore, enter 3 characters");
-      console.log(userInitials);
-      // check the users input and confirm they put in a number between 8 and 128
-      if (userInitials.length != 3) {
-        alert("Too many characters or not enough characters. Please only type 3 characters!")
-        WinGame();
-        return;
-      }
-      var highscore = {
-        userInitials , timerCount
-      }
-      localStorage.setItem("userHS", JSON.stringify(highscore));
-      alert("Highscore Saved!");
-    }
-    
-    function LoseGame() {
-      if (currentQuestionIndex >= questionAnswerContainer.length){
-        startButton.setAttribute('style', 'display: block');
-      }
-      else{
-        alert("You lost. Press the start button to try again!");
-        startButton.setAttribute('style', 'display: block');
-      }
-    }
+  var userInitials = prompt("Want to save your highscore, enter 3 characters");
+  console.log(userInitials);
+  // check the users input and confirm they put in a number between 8 and 128
+  if (userInitials.length != 3) {
+    alert("Too many characters or not enough characters. Please only type 3 characters!")
+    WinGame();
+    return;
+  }
+  var highscore = {
+    userInitials, timerCount
+  }
+  localStorage.setItem("userHS", JSON.stringify(highscore));
+  alert("Highscore Saved!");
+}
 
-    
-    var questionAnswerContainer = [
-      {
-        question: "What native country is Brazil?",
-        answers: [
+function LoseGame() {
+  if (currentQuestionIndex >= questionAnswerContainer.length) {
+    startButton.setAttribute('style', 'display: block');
+  }
+  else {
+    alert("You lost. Press the start button to try again!");
+    startButton.setAttribute('style', 'display: block');
+  }
+}
+
+var questionAnswerContainer = [
+  {
+    question: "What native country is Brazil?",
+    answers: [
       { text: "North American", correct: true },
       { text: "South American", correct: false },
       { text: "West American", correct: false },
@@ -157,4 +156,3 @@ function WinGame() {
     ]
   }
 ]
-
