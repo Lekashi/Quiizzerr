@@ -85,20 +85,26 @@ function checkAnswer(e) {
 function WinGame() {
   // var numChars = prompt("How many character ")
       var userInitials = prompt("Want to save your highscore, enter 3 characters");
-      
+      console.log(userInitials);
       // check the users input and confirm they put in a number between 8 and 128
       if (userInitials.length != 3) {
         alert("Too many characters or not enough characters. Please only type 3 characters!")
         WinGame();
         return;
       }
-      alert("Highscore Saved!")
-
+      localStorage.setItem("playerTag", userInitials);
+      localStorage.setItem("Score", timerCount);
+      alert("Highscore Saved!");
     }
     
     function LoseGame() {
-      alert("You lost. Press the start button to try again!")
-      startButton.setAttribute('style', 'display: block')
+      if (currentQuestionIndex >= questionAnswerContainer.length){
+        startButton.setAttribute('style', 'display: block');
+      }
+      else{
+        alert("You lost. Press the start button to try again!");
+        startButton.setAttribute('style', 'display: block');
+      }
     }
     
     
