@@ -7,7 +7,9 @@ allPlayerTags();
 
 
 function allPlayerTags() {
-    var highscoreStored = localStorage.getItem("userHS");
-    hsList = list.appendChild(document.createElement('ls'));
-    hsList.textContent = highscoreStored;
+    var highscoreStored = JSON.parse(localStorage.getItem("userHS"));
+    highscoreStored.forEach(score => {
+        hsList = list.appendChild(document.createElement('li'));
+        hsList.textContent = score.userInitials+ ": " + score.timerCount;
+    });
 }

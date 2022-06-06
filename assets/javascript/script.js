@@ -89,13 +89,20 @@ function WinGame() {
   // check the users input and confirm they put in a number between 8 and 128
   if (userInitials.length != 3) {
     alert("Too many characters or not enough characters. Please only type 3 characters!")
-    WinGame();
-    return;
+    return WinGame();
   }
   var highscore = {
     userInitials, timerCount
   }
-  localStorage.setItem("userHS", JSON.stringify(highscore));
+  var highscoreStored = JSON.parse(localStorage.getItem("userHS"))||[];
+  console.log(highscore);
+  console.log(highscoreStored);
+  var newHighscore = [
+    ...highscoreStored, 
+    highscore
+  ]
+  console.log(newHighscore)
+  localStorage.setItem("userHS", JSON.stringify(newHighscore));
   alert("Highscore Saved!");
 }
 
