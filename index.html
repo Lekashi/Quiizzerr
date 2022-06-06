@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,29 @@
     <title>Quiizzerr</title>
     <link rel="stylesheet" href="./assets/css/styles.css" />
 </head>
+
 <body>
     <div>
         <h1>Quiizzerr</h1>
         <button id="startButton">Start Game</button>
     </div>
-    <div class="questionSec" >
+    <div class="questionSec">
         <h2>Time Left: <span id="Timer"></span></h2>
-        <h2>Problem: <span class = "problemNumber" ></span></h2>
-        <div id="buttonContainer">
-            <button class="paBtn" data-answer="test1">Answer A</button>
-            <button class="paBtn" data-answer="test2">Answer B</button>
-            <button class="paBtn" data-answer="test3">Answer C</button>
-            <button class="paBtn" data-answer="test4">Answer D</button>
-        </div>
+        <section class="container" id="questionContainer">
+            <h2 id="currentQuestion"></h2>
+            <div id="buttonContainer">
+                <button class="paBtn"> A</button>
+                <button class="paBtn"> B</button>
+                <button class="paBtn"> C</button>
+                <button class="paBtn"> D</button>
+            </div>
+        </section>
+        <section class="checkAnswerContainer">
+            <p id="checkAnswerIncorrect">Incorrect</p>
+            <p id="checkAnswerCorrect">Correct</p>
+        </section>
     </div>
     <script type="text/javascript" src="./assets/javascript/script.js"></script>
 </body>
+
 </html>
