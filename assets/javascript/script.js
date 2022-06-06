@@ -106,7 +106,7 @@ function WinGame() {
         startButton.setAttribute('style', 'display: block');
       }
     }
-    
+
     
     var questionAnswerContainer = [
       {
