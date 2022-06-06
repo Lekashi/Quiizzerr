@@ -92,8 +92,10 @@ function WinGame() {
         WinGame();
         return;
       }
-      localStorage.setItem("playerTag", userInitials);
-      localStorage.setItem("Score", timerCount);
+      var highscore = {
+        userInitials , timerCount
+      }
+      localStorage.setItem("userHS", JSON.stringify(highscore));
       alert("Highscore Saved!");
     }
     
