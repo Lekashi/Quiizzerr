@@ -1,6 +1,6 @@
 // Time Variables
 var timeEl = document.getElementById("Timer");
-var timerCount = 30;
+var timerCount = 60;
 // Time function
 function timerStart() {
   console.log("timerStart function has started")
@@ -25,7 +25,7 @@ startButton.addEventListener("click", gameStart);
 let switchQuestions, currentQuestionIndex;
 
 function gameStart() {
-  timerCount = 30;
+  timerCount = 60;
   console.log("startGame Function has started")
   startButton.setAttribute('style', 'display: none')
   switchQuestions = questionAnswerContainer.sort(() => Math.random() - .5)
@@ -40,8 +40,8 @@ function questionShow() {
   console.log(answerButDisplay);
   for (i = 0; i < answerButDisplay.length; i++) {
     answerButDisplay[i].textContent = questionAnswerContainer[currentQuestionIndex].answers[i].text;
-    answerButDisplay[i].setAttribute("data-correct", questionAnswerContainer[currentQuestionIndex].answers[i].correct)
-    answerButDisplay[i].addEventListener("click", checkAnswer)
+    answerButDisplay[i].setAttribute("data-correct", questionAnswerContainer[currentQuestionIndex].answers[i].correct);
+    answerButDisplay[i].addEventListener("click", checkAnswer);
   }
 }
 
@@ -58,18 +58,20 @@ function checkAnswer(e) {
       if (checkAnswerTime <= 0) {
         checkAnswerCorrect.setAttribute('style', 'display: none')
         clearInterval(checkAnswerInterval);
+        return;
       }
     }, 1000);
 
   } else {
     console.log("bad")
-    timerCount -= 10;
+    timerCount -= 5;
     checkAnswerIncorrect.setAttribute('style', 'display: block')
     checkAnswerInterval = setInterval(function () {
       checkAnswerTime--;
       if (checkAnswerTime <= 0) {
         checkAnswerIncorrect.setAttribute('style', 'display: none')
         clearInterval(checkAnswerInterval);
+        return;
       }
     }, 1000);
   }
@@ -120,8 +122,8 @@ var questionAnswerContainer = [
   {
     question: "What native country is Brazil?",
     answers: [
-      { text: "North American", correct: true },
-      { text: "South American", correct: false },
+      { text: "North American", correct: false },
+      { text: "South American", correct: true },
       { text: "West American", correct: false },
       { text: "East American", correct: false }
     ]
@@ -130,9 +132,9 @@ var questionAnswerContainer = [
     question: "What is the national language of Canada?",
     answers: [
       { text: "English", correct: false },
-      { text: "French", correct: false },
+      { text: "French", correct: true },
       { text: "German", correct: false },
-      { text: "Dutch", correct: true }
+      { text: "Dutch", correct: false }
     ]
   },
   {
@@ -154,12 +156,21 @@ var questionAnswerContainer = [
     ]
   },
   {
-    question: "Which core ingredient is important to cook a savory dish?",
+    question: "Brazil is the biggest producer of?",
     answers: [
       { text: "Sugar", correct: false },
-      { text: "Butter", correct: false },
-      { text: "Salt", correct: true },
+      { text: "coffee", correct: true },
+      { text: "Salt", correct: false },
       { text: "Meat", correct: false }
     ]
-  }
+  },
+  {
+    question: "Which country is infamously known as Arch Rival of Pakistan?",
+    answers: [
+      { text: "Kazakhstan", correct: false },
+      { text: "America", correct: false },
+      { text: "India", correct: true },
+      { text: "Afghanistan", correct: false }
+    ]
+  },
 ]
