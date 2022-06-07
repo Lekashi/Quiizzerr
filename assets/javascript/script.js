@@ -64,7 +64,7 @@ function checkAnswer(e) {
 
   } else {
     console.log("bad")
-    timerCount -= 5;
+    timerCount -= 10;
     checkAnswerIncorrect.setAttribute('style', 'display: block')
     checkAnswerInterval = setInterval(function () {
       checkAnswerTime--;
